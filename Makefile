@@ -1,6 +1,7 @@
 EXTRA_CFLAGS += $(USER_EXTRA_CFLAGS)
-EXTRA_CFLAGS += -O1
-#EXTRA_CFLAGS += -O3
+# Prefer a release-targeted optimization level for the hot packet-processing paths in
+# this driver; the default -O1 leaves significant CPU headroom on the table.
+EXTRA_CFLAGS += -O3
 #EXTRA_CFLAGS += -Wall
 #EXTRA_CFLAGS += -Wextra
 #EXTRA_CFLAGS += -Werror
